@@ -36,9 +36,12 @@ public class StudyController {
         return "index";
     }
 
-    // /req4를 
+    // 주소값 /req4가 넘어 올 경우 get으로 받아준다.
+    // /req4가 get으로 받았을 경우 실행될 메서드를 작성해준다.
+    // 주소를 받아 해당 페이지가 열리기를 원할 경우 보통 get으로 받는다.
     @GetMapping("/req4")
     public  String req4(Model model){
+
         StudyDTO studyDTO = studyService.req4();
         model.addAttribute("study", studyDTO);
         return "req4";
