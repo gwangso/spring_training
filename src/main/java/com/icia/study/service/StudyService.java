@@ -2,7 +2,6 @@ package com.icia.study.service;
 
 import com.icia.study.dto.StudyDTO;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +30,7 @@ public class StudyService {
     * index.jsp에서 req4 주소를 요청하면
     * 서비스 클래스의 req4 메서드가 리턴한 객체 데이터 값을 req4.jsp에 출력함
     */
+
     public StudyDTO req4() {
         // StudyDTO 클래스를 이용해 비어있는 객체 studyDTO를 만들어준다.
         StudyDTO studyDTO = new StudyDTO();
@@ -45,7 +45,9 @@ public class StudyService {
     * req5 메서드
     * StudyDTO가 담긴 리스트 객체를 리턴한다.
     * index.jsp에서 req5 주소를 요청하면
-    * 서비스 클래스의 req5 메서드가 리턴한 객체 데이터 값을 req5.jsp에 출력함*/
+    * 서비스 클래스의 req5 메서드가 리턴한 객체 데이터 값을 req5.jsp에 출력함
+    */
+
     public List<StudyDTO> req5() {
         // StudyDTO클래스 형식의 객체를 담을 List를 studyDTOList라는 이름으로 생성해준다.
         List<StudyDTO> studyDTOList = new ArrayList<>();

@@ -37,13 +37,18 @@ public class StudyController {
     }
 
     // 주소값 /req4가 넘어 올 경우 get으로 받아준다.
-    // /req4가 get으로 받았을 경우 실행될 메서드를 작성해준다.
     // 주소를 받아 해당 페이지가 열리기를 원할 경우 보통 get으로 받는다.
+    // /req4가 get으로 받았을 경우 실행될 메서드를 작성해준다.
+    // 값을 Service에서 받아 views에 출력하고 싶을 경우 Model 객체를 매개변수로 생성해준다.
     @GetMapping("/req4")
     public  String req4(Model model){
-
+        // StudyDTO클래스를 통해 비어있는 객체 studyDTO를 만든 뒤
+        // studyService.req4()에서 건내준 StudyDTO 객체를 담는다.
         StudyDTO studyDTO = studyService.req4();
+        // model에 addAttribute를 이용해 studyDTO를 넣고
+        // 이를 호출하기 위해 사용되는 키로 study를 지정해준다.
         model.addAttribute("study", studyDTO);
+        // 목적지 설정(출력할 페이지)
         return "req4";
     }
 
