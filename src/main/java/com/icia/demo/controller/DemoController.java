@@ -25,13 +25,16 @@ public class DemoController {
         return "demo2";
     }
     @GetMapping("/req1")
-    public String req1(@RequestParam("name") String name, @RequestParam("age") int age, Model model){
+    public String req1(@RequestParam("name") String name,
+                       @RequestParam("age") int age,
+                       Model model){
         DemoDTO demoDTO = demoService.req1(name, age);
         model.addAttribute("demo", demoDTO);
         return "req1";
     }
     @PostMapping("/req2")
-    public String req2(@ModelAttribute DemoDTO demoDTO,Model model){
+    public String req2(@ModelAttribute DemoDTO demoDTO,
+                       Model model){
         List<DemoDTO> demoDTOList = demoService.req2(demoDTO);
         model.addAttribute("demoList",demoDTOList);
         return "req2";
