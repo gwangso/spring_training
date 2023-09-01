@@ -4,8 +4,22 @@
 
 <!-- namespace 반드시 작성! -->
 <mapper namespace="Demo">
+
+
     <insert id="save" parameterType="com.icia.demo.dto.DemoDTO">
         insert into demo_table(name, age)
         values(#{name}, #{age})
     </insert>
+
+
+    <select id="findAll" resultType="com.icia.demo.dto.DemoDTO">
+        select * from demo_table
+    </select>
+
+
+    <select id="findById" parameterType="Long" resultType="demo">
+        select * from demo_table where id=#{id}
+    </select>
+
+
 </mapper>
